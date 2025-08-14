@@ -100,13 +100,13 @@ export function MVPBuildTool() {
       clearDraft();
       setShowSuccessDialog(true);
       toast({
-        title: "MVP Plan Complete!",
-        description: "Your MVP plan has been successfully created.",
+        title: "Product Spec Complete!",
+        description: "Your product specification has been successfully created.",
       });
     } catch (error) {
       toast({
         title: "Submission Error",
-        description: "Failed to submit your MVP plan. Please try again.",
+        description: "Failed to submit your product specification. Please try again.",
         variant: "destructive",
       });
     }
@@ -138,9 +138,9 @@ export function MVPBuildTool() {
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Rocket className="w-8 h-8 text-green-600" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">MVP Plan Complete!</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-2">Product Spec Complete!</h2>
             <p className="text-slate-600 mb-6">
-              Your MVP plan is ready. Now it's time to start building!
+              Your product specification is ready. Now it's time to start building!
             </p>
             <Button
               onClick={() => {
@@ -150,7 +150,7 @@ export function MVPBuildTool() {
               className="w-full"
               data-testid="button-start-new-plan"
             >
-              Create Another Plan
+              Create Another Spec
             </Button>
           </CardContent>
         </Card>
@@ -169,7 +169,7 @@ export function MVPBuildTool() {
                 <Rocket className="text-white text-lg" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-slate-900">MVP Builder</h1>
+                <h1 className="text-xl font-semibold text-slate-900">SpeedSpec</h1>
                 <p className="text-sm text-slate-500 hidden sm:block">Professional MVP Planning Tool</p>
               </div>
             </div>
@@ -285,7 +285,7 @@ export function MVPBuildTool() {
       <Dialog open={showHelpDialog} onOpenChange={setShowHelpDialog}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>MVP Builder Help</DialogTitle>
+            <DialogTitle>SpeedSpec Help</DialogTitle>
             <DialogDescription>
               Need help building your MVP plan? Here are some tips:
             </DialogDescription>

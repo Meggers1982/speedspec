@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack MVP (Minimum Viable Product) planning application built with TypeScript, React, and Express. The application provides a guided, step-by-step interface for entrepreneurs and product builders to create comprehensive MVP plans through a structured form wizard. Users can define their product idea, core features, user flows, and technical specifications, then export their completed plans in various formats.
+SpeedSpec is a full-stack MVP (Minimum Viable Product) planning application built with TypeScript, React, and Express. The application provides a guided, step-by-step interface for entrepreneurs and product builders to create comprehensive product specifications through a structured form wizard. Users can define their product idea, core features, user flows, and technical specifications, then export their completed specs in various formats.
 
 # User Preferences
 

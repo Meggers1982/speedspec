@@ -30,7 +30,7 @@ export function ProgressStepper({
     <div className="mb-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900">Build Your MVP Plan</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Build Your Product Spec</h2>
           <p className="text-slate-600 mt-1">Step-by-step guide to validate and plan your product</p>
         </div>
         <div className="text-right">

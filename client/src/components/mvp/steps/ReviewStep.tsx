@@ -295,7 +295,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
 
         {/* Final Submit Button */}
         <div className="mt-8 p-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white text-center">
-          <h4 className="text-lg font-medium mb-2">🎯 Ready to Build Your MVP?</h4>
+          <h4 className="text-lg font-medium mb-2">🎯 Ready to Build Your Product?</h4>
           <p className="mb-4">
             Focus: Build the simplest version that works, get it in front of users fast, then improve.
           </p>
@@ -306,7 +306,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
             data-testid="button-submit-mvp"
           >
             <Rocket className="w-4 h-4 mr-2" />
-            Complete MVP Plan
+            Complete Product Spec
           </Button>
         </div>
       </Form>
