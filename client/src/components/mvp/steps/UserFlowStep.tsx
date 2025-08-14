@@ -4,7 +4,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Map, AlertTriangle, TrendingUp, Plus, X } from "lucide-react";
+import { ChicMapIcon, ChicAlertIcon, ChicTrendingIcon, ChicPlusIcon, ChicXIcon } from "@/components/icons/FeminineIcons";
 
 interface UserFlowStepProps {
   form: UseFormReturn<MVPFormData>;
@@ -20,7 +20,7 @@ export function UserFlowStep({ form }: UserFlowStepProps) {
     <div className="space-y-8">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-          <Map className="text-blue-600 text-lg" />
+          <ChicMapIcon className="text-blue-600 text-lg" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-slate-900">User Flow</h3>
@@ -93,7 +93,7 @@ export function UserFlowStep({ form }: UserFlowStepProps) {
           {/* Pain Points */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
             <div className="flex items-start space-x-3">
-              <AlertTriangle className="text-amber-600 text-lg mt-1 flex-shrink-0" />
+              <ChicAlertIcon className="text-amber-600 text-lg mt-1 flex-shrink-0" />
               <div className="flex-1">
                 <h4 className="font-medium text-amber-900 mb-2">Potential Pain Points</h4>
                 <p className="text-sm text-amber-800 mb-4">
@@ -122,7 +122,7 @@ export function UserFlowStep({ form }: UserFlowStepProps) {
           {/* Success Metrics */}
           <div className="bg-green-50 border border-green-200 rounded-xl p-6">
             <div className="flex items-start space-x-3">
-              <TrendingUp className="text-green-600 text-lg mt-1 flex-shrink-0" />
+              <ChicTrendingIcon className="text-green-600 text-lg mt-1 flex-shrink-0" />
               <div className="flex-1">
                 <h4 className="font-medium text-green-900 mb-2">Success Metrics</h4>
                 <p className="text-sm text-green-800 mb-4">
@@ -159,7 +159,7 @@ export function UserFlowStep({ form }: UserFlowStepProps) {
                 onClick={() => appendAltFlow("")}
                 data-testid="button-add-alternative-flow"
               >
-                <Plus className="w-4 h-4 mr-2" />
+                <ChicPlusIcon className="w-4 h-4 mr-2" />
                 Add Alternative Flow
               </Button>
             </div>
@@ -179,7 +179,7 @@ export function UserFlowStep({ form }: UserFlowStepProps) {
                     className="text-slate-400 hover:text-red-500"
                     data-testid={`button-remove-alternative-flow-${index}`}
                   >
-                    <X className="w-4 h-4" />
+                    <ChicXIcon className="w-4 h-4" />
                   </Button>
                 </div>
                 <FormField

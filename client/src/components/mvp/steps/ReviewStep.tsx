@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Download, Copy, Rocket, Calendar, Users, Target, Settings, CheckCircle } from "lucide-react";
+import { ChicDocumentIcon, ChicDownloadIcon, ChicCopyIcon, ChicRocketIcon, ChicCalendarIcon, ChicUsersIcon, ChicTargetIcon, ChicSettingsIcon, ChicCheckIcon } from "@/components/icons/FeminineIcons";
 import { exportToPDF, copyToClipboard, exportToJSON } from "@/lib/exportUtils";
 import { useToast } from "@/hooks/use-toast";
 
@@ -80,7 +80,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
     <div className="space-y-8">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-          <FileText className="text-green-600 text-lg" />
+          <ChicDocumentIcon className="text-green-600 text-lg" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-slate-900">Review & Export</h3>
@@ -118,7 +118,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
             className="flex items-center space-x-2"
             data-testid="button-export-pdf"
           >
-            <Download className="w-4 h-4" />
+            <ChicDownloadIcon className="w-4 h-4" />
             <span>Download PDF</span>
           </Button>
           <Button
@@ -128,7 +128,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
             className="flex items-center space-x-2"
             data-testid="button-copy-clipboard"
           >
-            <Copy className="w-4 h-4" />
+            <ChicCopyIcon className="w-4 h-4" />
             <span>Copy to Clipboard</span>
           </Button>
           <Button
@@ -138,7 +138,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
             className="flex items-center space-x-2"
             data-testid="button-export-json"
           >
-            <FileText className="w-4 h-4" />
+            <ChicDocumentIcon className="w-4 h-4" />
             <span>Export JSON</span>
           </Button>
         </div>
@@ -149,7 +149,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
           <Card>
             <CardHeader className="bg-blue-50">
               <CardTitle className="flex items-center space-x-2 text-blue-900">
-                <Target className="w-5 h-5" />
+                <ChicTargetIcon className="w-5 h-5" />
                 <span>Project Overview</span>
               </CardTitle>
             </CardHeader>
@@ -169,7 +169,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
               <div>
                 <h4 className="font-medium text-slate-900 mb-1">Timeline</h4>
                 <Badge variant="outline" className="flex items-center space-x-1 w-fit">
-                  <Calendar className="w-3 h-3" />
+                  <ChicCalendarIcon className="w-3 h-3" />
                   <span>{formData.timeframe || "Not specified"}</span>
                 </Badge>
               </div>
@@ -180,7 +180,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
           <Card>
             <CardHeader className="bg-green-50">
               <CardTitle className="flex items-center space-x-2 text-green-900">
-                <Settings className="w-5 h-5" />
+                <ChicSettingsIcon className="w-5 h-5" />
                 <span>Feature Specification</span>
               </CardTitle>
             </CardHeader>
@@ -194,7 +194,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
                 <div className="space-y-1">
                   {formData.supportingFeatures?.filter(f => f.trim()).map((feature, i) => (
                     <div key={i} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <ChicCheckIcon className="w-4 h-4 text-green-500" />
                       <span className="text-slate-700">{feature}</span>
                     </div>
                   )) || <p className="text-slate-500">No supporting features specified</p>}
@@ -207,7 +207,7 @@ export function ReviewStep({ form, onSubmit }: ReviewStepProps) {
           <Card>
             <CardHeader className="bg-purple-50">
               <CardTitle className="flex items-center space-x-2 text-purple-900">
-                <Users className="w-5 h-5" />
+                <ChicUsersIcon className="w-5 h-5" />
                 <span>User Flow</span>
               </CardTitle>
             </CardHeader>

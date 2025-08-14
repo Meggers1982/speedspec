@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Code } from "lucide-react";
+import { ChicCodeIcon } from "@/components/icons/FeminineIcons";
 
 interface TechnicalStepProps {
   form: UseFormReturn<MVPFormData>;
@@ -36,7 +36,7 @@ export function TechnicalStep({ form }: TechnicalStepProps) {
     <div className="space-y-8">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-          <Code className="text-orange-600 text-lg" />
+          <ChicCodeIcon className="text-orange-600 text-lg" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-slate-900">Technical Specs</h3>

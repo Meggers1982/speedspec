@@ -3,7 +3,7 @@ import { MVPFormData } from "@/lib/mvpSchema";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Lightbulb } from "lucide-react";
+import { ChicIdeaIcon } from "@/components/icons/FeminineIcons";
 
 interface IdeaStepProps {
   form: UseFormReturn<MVPFormData>;
@@ -14,7 +14,7 @@ export function IdeaStep({ form }: IdeaStepProps) {
     <div className="space-y-8">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-          <Lightbulb className="text-blue-600 text-lg" />
+          <ChicIdeaIcon className="text-blue-600 text-lg" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-slate-900">Your Idea</h3>

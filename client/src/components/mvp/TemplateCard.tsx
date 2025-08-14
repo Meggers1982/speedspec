@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ShoppingCart, Users, ClipboardList } from "lucide-react";
+import { ChicShoppingCartIcon, ChicUsersIcon, ChicClipboardIcon } from "@/components/icons/FeminineIcons";
 import { mvpTemplates } from "@/lib/mvpSchema";
 
 interface TemplateCardProps {
@@ -7,9 +7,9 @@ interface TemplateCardProps {
 }
 
 const iconMap = {
-  "shopping-cart": ShoppingCart,
-  "users": Users,
-  "clipboard-list": ClipboardList,
+  "shopping-cart": ChicShoppingCartIcon,
+  "users": ChicUsersIcon,
+  "clipboard-list": ChicClipboardIcon,
 };
 
 export function TemplateCard({ onTemplateSelect }: TemplateCardProps) {
@@ -22,7 +22,7 @@ export function TemplateCard({ onTemplateSelect }: TemplateCardProps) {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {mvpTemplates.map((template) => {
-            const IconComponent = iconMap[template.icon as keyof typeof iconMap] || ClipboardList;
+            const IconComponent = iconMap[template.icon as keyof typeof iconMap] || ChicClipboardIcon;
             
             return (
               <div

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { HelpCircle, Save } from "lucide-react";
+import { ChicHelpIcon, ChicSaveIcon } from "@/components/icons/FeminineIcons";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface FloatingActionsProps {
@@ -19,7 +19,7 @@ export function FloatingActions({ onSave, onHelp }: FloatingActionsProps) {
             onClick={onHelp}
             data-testid="button-help"
           >
-            <HelpCircle className="w-5 h-5 text-slate-600" />
+            <ChicHelpIcon className="w-5 h-5 text-slate-600" />
           </Button>
         </TooltipTrigger>
         <TooltipContent>
@@ -35,7 +35,7 @@ export function FloatingActions({ onSave, onHelp }: FloatingActionsProps) {
             onClick={onSave}
             data-testid="button-save"
           >
-            <Save className="w-5 h-5 text-white" />
+            <ChicSaveIcon className="w-5 h-5 text-white" />
           </Button>
         </TooltipTrigger>
         <TooltipContent>

@@ -3,7 +3,7 @@ import { MVPFormData } from "@/lib/mvpSchema";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Settings, Plus, X } from "lucide-react";
+import { ChicSettingsIcon, ChicPlusIcon, ChicXIcon } from "@/components/icons/FeminineIcons";
 
 interface FeaturesStepProps {
   form: UseFormReturn<MVPFormData>;
@@ -12,14 +12,14 @@ interface FeaturesStepProps {
 export function FeaturesStep({ form }: FeaturesStepProps) {
   const { fields, append, remove } = useFieldArray({
     control: form.control,
-    name: "supportingFeatures",
+    name: "supportingFeatures" as "supportingFeatures",
   });
 
   return (
     <div className="space-y-8">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-          <Settings className="text-green-600 text-lg" />
+          <ChicSettingsIcon className="text-green-600 text-lg" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-slate-900">Core Features</h3>
@@ -61,7 +61,7 @@ export function FeaturesStep({ form }: FeaturesStepProps) {
                 onClick={() => append("")}
                 data-testid="button-add-feature"
               >
-                <Plus className="w-4 h-4 mr-2" />
+                <ChicPlusIcon className="w-4 h-4 mr-2" />
                 Add Feature
               </Button>
             </div>
@@ -99,7 +99,7 @@ export function FeaturesStep({ form }: FeaturesStepProps) {
                     className="text-red-500 hover:text-red-700"
                     data-testid={`button-remove-feature-${index}`}
                   >
-                    <X className="w-4 h-4" />
+                    <ChicXIcon className="w-4 h-4" />
                   </Button>
                 )}
               </div>
