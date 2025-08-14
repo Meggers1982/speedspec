@@ -1,4 +1,5 @@
-import { CheckCircle, Lightbulb, Settings, Map, Code, FileText } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import { SparkleIcon, FlowerIcon, LeafIcon, ButterflyIcon, SoftFileIcon } from "@/components/icons/FeminineIcons";
 import { cn } from "@/lib/utils";
 
 interface ProgressStepperProps {
@@ -11,11 +12,11 @@ interface ProgressStepperProps {
 }
 
 const iconMap = {
-  lightbulb: Lightbulb,
-  settings: Settings,
-  map: Map,
-  code: Code,
-  "file-text": FileText,
+  lightbulb: SparkleIcon,
+  settings: FlowerIcon,
+  map: LeafIcon,
+  code: ButterflyIcon,
+  "file-text": SoftFileIcon,
 };
 
 export function ProgressStepper({
@@ -30,20 +31,23 @@ export function ProgressStepper({
     <div className="mb-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900">Build Your Product Spec</h2>
-          <p className="text-slate-600 mt-1">Step-by-step guide to validate and plan your product</p>
+          <h2 className="text-2xl font-bold" style={{ color: 'var(--gentle-gray-800)' }}>Build Your Product Spec</h2>
+          <p className="mt-1" style={{ color: 'var(--gentle-gray-600)' }}>Step-by-step guide to validate and plan your product</p>
         </div>
         <div className="text-right">
-          <div className="text-sm text-slate-500">Progress</div>
-          <div className="text-2xl font-bold text-blue-600">{Math.round(progress)}%</div>
+          <div className="text-sm" style={{ color: 'var(--gentle-gray-500)' }}>Progress</div>
+          <div className="text-2xl font-bold" style={{ color: 'var(--dusty-rose-500)' }}>{Math.round(progress)}%</div>
         </div>
       </div>
       
       {/* Progress bar */}
-      <div className="w-full bg-slate-200 rounded-full h-2 mb-6">
+      <div className="w-full rounded-full h-2 mb-6" style={{ backgroundColor: 'var(--gentle-gray-200)' }}>
         <div 
-          className="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full transition-all duration-500 ease-out" 
-          style={{ width: `${progress}%` }}
+          className="h-2 rounded-full transition-all duration-500 ease-out" 
+          style={{ 
+            width: `${progress}%`,
+            background: `linear-gradient(90deg, var(--dusty-rose-400) 0%, var(--sage-green-400) 100%)`
+          }}
           data-testid="progress-bar"
         />
       </div>
@@ -51,7 +55,7 @@ export function ProgressStepper({
       {/* Step indicators */}
       <div className="flex items-center justify-between">
         {steps.map((step, index) => {
-          const IconComponent = iconMap[step.icon as keyof typeof iconMap] || FileText;
+          const IconComponent = iconMap[step.icon as keyof typeof iconMap] || SoftFileIcon;
           const validation = getStepValidation(index);
           const isCompleted = index < currentStep || (index === currentStep && validation.isValid);
           const isCurrent = index === currentStep;
@@ -70,32 +74,40 @@ export function ProgressStepper({
               <div className={cn(
                 "w-10 h-10 rounded-full flex items-center justify-center text-white mb-2 shadow-lg transition-all",
                 isCompleted 
-                  ? "bg-green-500"
+                  ? ""
                   : isCurrent
-                  ? "bg-blue-500 animate-pulse-subtle"
-                  : "bg-slate-300 text-slate-600"
-              )}>
+                  ? "animate-pulse-subtle"
+                  : ""
+              )}
+              style={{
+                backgroundColor: isCompleted 
+                  ? 'var(--sage-green-500)'
+                  : isCurrent
+                  ? 'var(--dusty-rose-500)'
+                  : 'var(--gentle-gray-300)',
+                color: isCompleted || isCurrent ? 'white' : 'var(--gentle-gray-600)'
+              }}>
                 {isCompleted ? (
                   <CheckCircle className="w-5 h-5" />
                 ) : (
                   <IconComponent className="w-5 h-5" />
                 )}
               </div>
-              <span className={cn(
-                "text-xs font-medium text-center max-w-20",
-                isCompleted
-                  ? "text-green-600"
+              <span className="text-xs font-medium text-center max-w-20"
+              style={{
+                color: isCompleted
+                  ? 'var(--sage-green-600)'
                   : isCurrent
-                  ? "text-blue-600"
-                  : "text-slate-500"
-              )}>
+                  ? 'var(--dusty-rose-600)'
+                  : 'var(--gentle-gray-500)'
+              }}>
                 {step.title}
               </span>
               {index < totalSteps - 1 && (
-                <div className={cn(
-                  "absolute top-5 w-20 h-0.5 transform translate-x-12",
-                  index < currentStep ? "bg-green-500" : "bg-slate-300"
-                )} />
+                <div className="absolute top-5 w-20 h-0.5 transform translate-x-12"
+                style={{
+                  backgroundColor: index < currentStep ? 'var(--sage-green-500)' : 'var(--gentle-gray-300)'
+                }} />
               )}
             </div>
           );

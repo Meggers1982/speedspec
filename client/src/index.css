@@ -51,32 +51,48 @@
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
-  /* Custom MVP Builder colors */
-  --mvp-blue-50: hsl(214 100% 97%);
-  --mvp-blue-100: hsl(214 95% 93%);
-  --mvp-blue-500: hsl(217 91% 60%);
-  --mvp-blue-600: hsl(221 83% 53%);
-  --mvp-blue-700: hsl(224 76% 48%);
-  --mvp-green-50: hsl(138 76% 97%);
-  --mvp-green-100: hsl(141 84% 93%);
-  --mvp-green-500: hsl(142 76% 36%);
-  --mvp-green-600: hsl(142 72% 29%);
-  --mvp-amber-50: hsl(48 100% 96%);
-  --mvp-amber-100: hsl(48 96% 89%);
-  --mvp-amber-200: hsl(48 97% 77%);
-  --mvp-amber-600: hsl(32 95% 44%);
-  --mvp-amber-800: hsl(28 92% 27%);
-  --mvp-amber-900: hsl(26 90% 20%);
-  --mvp-purple-100: hsl(253 100% 97%);
-  --mvp-purple-200: hsl(253 100% 94%);
-  --mvp-purple-600: hsl(253 91% 63%);
-  --mvp-slate-50: hsl(210 40% 98%);
-  --mvp-slate-200: hsl(214 32% 91%);
-  --mvp-slate-300: hsl(213 27% 84%);
-  --mvp-slate-400: hsl(215 20% 65%);
-  --mvp-slate-500: hsl(215 16% 47%);
-  --mvp-slate-600: hsl(215 19% 35%);
-  --mvp-slate-900: hsl(222 84% 5%);
+  /* Feminine Nature-Inspired Colors */
+  --dusty-rose-50: hsl(19 45% 96%);
+  --dusty-rose-100: hsl(19 45% 92%);
+  --dusty-rose-200: hsl(19 45% 85%);
+  --dusty-rose-300: hsl(19 35% 75%);
+  --dusty-rose-400: hsl(19 30% 65%);
+  --dusty-rose-500: hsl(19 25% 55%);
+  --dusty-rose-600: hsl(19 20% 45%);
+  
+  --sage-green-50: hsl(95 20% 95%);
+  --sage-green-100: hsl(95 20% 88%);
+  --sage-green-200: hsl(95 18% 78%);
+  --sage-green-300: hsl(95 15% 68%);
+  --sage-green-400: hsl(95 12% 58%);
+  --sage-green-500: hsl(95 10% 48%);
+  --sage-green-600: hsl(95 12% 38%);
+  
+  --warm-cream-50: hsl(42 55% 97%);
+  --warm-cream-100: hsl(42 50% 94%);
+  --warm-cream-200: hsl(42 45% 88%);
+  --warm-cream-300: hsl(42 40% 82%);
+  
+  --soft-lavender-50: hsl(290 25% 96%);
+  --soft-lavender-100: hsl(290 25% 92%);
+  --soft-lavender-200: hsl(290 20% 85%);
+  --soft-lavender-300: hsl(290 18% 75%);
+  
+  --muted-coral-50: hsl(15 40% 95%);
+  --muted-coral-100: hsl(15 40% 90%);
+  --muted-coral-200: hsl(15 35% 82%);
+  --muted-coral-300: hsl(15 30% 72%);
+  
+  --gentle-gray-50: hsl(220 15% 97%);
+  --gentle-gray-100: hsl(220 12% 94%);
+  --gentle-gray-200: hsl(220 10% 88%);
+  --gentle-gray-300: hsl(220 8% 78%);
+  --gentle-gray-400: hsl(220 6% 65%);
+  --gentle-gray-500: hsl(220 5% 52%);
+  --gentle-gray-600: hsl(220 6% 42%);
+  --gentle-gray-700: hsl(220 8% 32%);
+  --gentle-gray-800: hsl(220 10% 22%);
+  --gentle-gray-900: hsl(220 15% 12%);
 }
 
 .dark {
@@ -192,5 +208,43 @@
     100% {
       width: var(--progress-width);
     }
+  }
+
+  /* Feminine SpeedSpec Button Styling */
+  .btn-feminine-primary {
+    background: linear-gradient(135deg, var(--dusty-rose-400) 0%, var(--sage-green-400) 100%);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-feminine-primary:hover {
+    background: linear-gradient(135deg, var(--dusty-rose-500) 0%, var(--sage-green-500) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-feminine-outline {
+    border: 1.5px solid var(--dusty-rose-300);
+    color: var(--dusty-rose-600);
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .btn-feminine-outline:hover {
+    background: var(--dusty-rose-50);
+    border-color: var(--dusty-rose-400);
+    color: var(--dusty-rose-700);
+  }
+
+  .btn-feminine-ghost {
+    color: var(--gentle-gray-600);
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .btn-feminine-ghost:hover {
+    background: var(--warm-cream-100);
+    color: var(--dusty-rose-600);
   }
 }

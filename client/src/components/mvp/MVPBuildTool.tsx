@@ -12,6 +12,7 @@ import { TemplateCard } from "./TemplateCard";
 import { FloatingActions } from "./FloatingActions";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Rocket } from "lucide-react";
+import { SparkleIcon, HeartIcon } from "@/components/icons/FeminineIcons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -132,14 +133,14 @@ export function MVPBuildTool() {
   // Show success dialog for final step
   if (showSuccessDialog) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: 'var(--warm-cream-50)' }}>
         <Card className="max-w-md w-full">
           <CardContent className="p-8 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Rocket className="w-8 h-8 text-green-600" />
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'var(--sage-green-100)' }}>
+              <SparkleIcon className="w-8 h-8" style={{ color: 'var(--sage-green-600)' }} />
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">Product Spec Complete!</h2>
-            <p className="text-slate-600 mb-6">
+            <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--gentle-gray-900)' }}>Product Spec Complete!</h2>
+            <p className="mb-6" style={{ color: 'var(--gentle-gray-600)' }}>
               Your product specification is ready. Now it's time to start building!
             </p>
             <Button
@@ -147,7 +148,7 @@ export function MVPBuildTool() {
                 setShowSuccessDialog(false);
                 form.reset();
               }}
-              className="w-full"
+              className="w-full btn-feminine-primary"
               data-testid="button-start-new-plan"
             >
               Create Another Spec
@@ -159,35 +160,43 @@ export function MVPBuildTool() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--warm-cream-50)' }}>
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50 backdrop-blur-md bg-white/95">
+      <header className="bg-white sticky top-0 z-50 backdrop-blur-md" style={{ 
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        borderBottom: '1px solid var(--gentle-gray-200)'
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{
+                background: `linear-gradient(135deg, var(--dusty-rose-400) 0%, var(--sage-green-400) 100%)`
+              }}>
                 <Rocket className="text-white text-lg" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-slate-900">SpeedSpec</h1>
-                <p className="text-sm text-slate-500 hidden sm:block">Professional MVP Planning Tool</p>
+                <h1 className="text-xl font-semibold" style={{ color: 'var(--gentle-gray-900)' }}>SpeedSpec</h1>
+                <p className="text-sm hidden sm:block" style={{ color: 'var(--gentle-gray-500)' }}>Professional MVP Planning Tool</p>
               </div>
             </div>
             
             {/* Auto-save indicator */}
             <div className="flex items-center space-x-4">
-              <div className="hidden sm:flex items-center space-x-2 text-sm text-slate-600">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse-subtle"></div>
+              <div className="hidden sm:flex items-center space-x-2 text-sm" style={{ color: 'var(--gentle-gray-600)' }}>
+                <div className="w-2 h-2 rounded-full animate-pulse-subtle" style={{ backgroundColor: 'var(--sage-green-500)' }}></div>
                 <span data-testid="auto-save-status">{formatLastSaved()}</span>
               </div>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setShowHelpDialog(true)}
-                className="text-slate-400 hover:text-slate-600"
+                className="transition-colors hover:bg-opacity-20"
+                style={{ 
+                  color: 'var(--gentle-gray-400)',
+                }}
                 data-testid="header-help-button"
               >
-                <Rocket className="text-lg" />
+                <HeartIcon className="text-lg" />
               </Button>
             </div>
           </div>
@@ -206,7 +215,7 @@ export function MVPBuildTool() {
         />
 
         {/* Form Container */}
-        <Card className="bg-white rounded-2xl shadow-sm border border-slate-200 animate-slide-up">
+        <Card className="bg-white rounded-2xl shadow-sm animate-slide-up" style={{ borderColor: 'var(--gentle-gray-200)' }}>
           <CardContent className="p-8">
             {renderCurrentStep()}
 
@@ -214,14 +223,20 @@ export function MVPBuildTool() {
             {currentStep < totalSteps - 1 && (
               <div className="mt-6">
                 {getStepValidation(currentStep).isValid ? (
-                  <Alert className="bg-green-50 border-green-200">
-                    <AlertDescription className="text-green-800">
+                  <Alert className="rounded-lg" style={{ 
+                    backgroundColor: 'var(--sage-green-50)', 
+                    borderColor: 'var(--sage-green-200)' 
+                  }}>
+                    <AlertDescription style={{ color: 'var(--sage-green-800)' }}>
                       ✓ All required fields completed for this step
                     </AlertDescription>
                   </Alert>
                 ) : getStepValidation(currentStep).hasBeenTouched ? (
-                  <Alert variant="destructive">
-                    <AlertDescription>
+                  <Alert variant="destructive" className="rounded-lg" style={{
+                    backgroundColor: 'var(--muted-coral-50)',
+                    borderColor: 'var(--muted-coral-200)'
+                  }}>
+                    <AlertDescription style={{ color: 'var(--muted-coral-600)' }}>
                       Please complete all required fields before continuing
                     </AlertDescription>
                   </Alert>
@@ -230,13 +245,13 @@ export function MVPBuildTool() {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex items-center justify-between pt-8 border-t border-slate-200">
+            <div className="flex items-center justify-between pt-8" style={{ borderTop: '1px solid var(--gentle-gray-200)' }}>
               <Button
                 type="button"
                 variant="outline"
                 onClick={prevStep}
                 disabled={currentStep === 0}
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-2 btn-feminine-outline"
                 data-testid="button-previous"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -248,6 +263,7 @@ export function MVPBuildTool() {
                   type="button"
                   variant="ghost"
                   onClick={handleSaveDraft}
+                  className="btn-feminine-ghost"
                   data-testid="button-save-draft"
                 >
                   Save Draft
@@ -257,7 +273,7 @@ export function MVPBuildTool() {
                     type="button"
                     onClick={handleNextStep}
                     disabled={isSubmitting}
-                    className="flex items-center space-x-2"
+                    className="flex items-center space-x-2 btn-feminine-primary"
                     data-testid="button-next"
                   >
                     <span>{currentStep === totalSteps - 2 ? 'Review Plan' : 'Continue'}</span>
