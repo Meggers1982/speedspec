@@ -37,7 +37,10 @@ export function IdeaStep({ form }: IdeaStepProps) {
                     placeholder="Example: People waste time manually splitting bills at restaurants and it creates awkward conversations about who owes what."
                     className="h-24 resize-none"
                     data-testid="input-problem"
-                    {...field}
+                    value={field.value || ""}
+                    onChange={field.onChange}
+                    onBlur={field.onBlur}
+                    name={field.name}
                   />
                 </FormControl>
                 <FormMessage />
@@ -58,7 +61,10 @@ export function IdeaStep({ form }: IdeaStepProps) {
                     placeholder="Example: An app that automatically calculates splits and sends payment requests so everyone knows exactly what they owe."
                     className="h-24 resize-none"
                     data-testid="input-solution"
-                    {...field}
+                    value={field.value || ""}
+                    onChange={field.onChange}
+                    onBlur={field.onBlur}
+                    name={field.name}
                   />
                 </FormControl>
                 <FormMessage />
@@ -78,7 +84,10 @@ export function IdeaStep({ form }: IdeaStepProps) {
                   <Input
                     placeholder="Example: Young professionals who eat out with friends regularly"
                     data-testid="input-target-user"
-                    {...field}
+                    value={field.value || ""}
+                    onChange={field.onChange}
+                    onBlur={field.onBlur}
+                    name={field.name}
                   />
                 </FormControl>
                 <FormMessage />
