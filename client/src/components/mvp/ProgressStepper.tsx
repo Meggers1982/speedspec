@@ -1,5 +1,4 @@
-import { CheckCircle } from "lucide-react";
-import { SparkleIcon, FlowerIcon, LeafIcon, ButterflyIcon, SoftFileIcon } from "@/components/icons/FeminineIcons";
+import { ChicIdeaIcon, ChicFeaturesIcon, ChicFlowIcon, ChicTechIcon, ChicDocumentIcon, ChicCheckIcon } from "@/components/icons/FeminineIcons";
 import { cn } from "@/lib/utils";
 
 interface ProgressStepperProps {
@@ -12,11 +11,11 @@ interface ProgressStepperProps {
 }
 
 const iconMap = {
-  lightbulb: SparkleIcon,
-  settings: FlowerIcon,
-  map: LeafIcon,
-  code: ButterflyIcon,
-  "file-text": SoftFileIcon,
+  lightbulb: ChicIdeaIcon,
+  settings: ChicFeaturesIcon,
+  map: ChicFlowIcon,
+  code: ChicTechIcon,
+  "file-text": ChicDocumentIcon,
 };
 
 export function ProgressStepper({
@@ -55,7 +54,7 @@ export function ProgressStepper({
       {/* Step indicators */}
       <div className="flex items-center justify-between">
         {steps.map((step, index) => {
-          const IconComponent = iconMap[step.icon as keyof typeof iconMap] || SoftFileIcon;
+          const IconComponent = iconMap[step.icon as keyof typeof iconMap] || ChicDocumentIcon;
           const validation = getStepValidation(index);
           const isCompleted = index < currentStep || (index === currentStep && validation.isValid);
           const isCurrent = index === currentStep;
@@ -88,7 +87,7 @@ export function ProgressStepper({
                 color: isCompleted || isCurrent ? 'white' : 'var(--gentle-gray-600)'
               }}>
                 {isCompleted ? (
-                  <CheckCircle className="w-5 h-5" />
+                  <ChicCheckIcon className="w-5 h-5" />
                 ) : (
                   <IconComponent className="w-5 h-5" />
                 )}

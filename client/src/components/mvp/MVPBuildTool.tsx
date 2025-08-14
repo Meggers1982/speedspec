@@ -12,7 +12,7 @@ import { TemplateCard } from "./TemplateCard";
 import { FloatingActions } from "./FloatingActions";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Rocket } from "lucide-react";
-import { SparkleIcon, HeartIcon } from "@/components/icons/FeminineIcons";
+import { ChicSparkleIcon, ChicHeartIcon } from "@/components/icons/FeminineIcons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -137,7 +137,7 @@ export function MVPBuildTool() {
         <Card className="max-w-md w-full">
           <CardContent className="p-8 text-center">
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'var(--sage-green-100)' }}>
-              <SparkleIcon className="w-8 h-8" style={{ color: 'var(--sage-green-600)' }} />
+              <ChicSparkleIcon className="w-8 h-8" style={{ color: 'var(--sage-green-600)' }} />
             </div>
             <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--gentle-gray-900)' }}>Product Spec Complete!</h2>
             <p className="mb-6" style={{ color: 'var(--gentle-gray-600)' }}>
@@ -196,7 +196,7 @@ export function MVPBuildTool() {
                 }}
                 data-testid="header-help-button"
               >
-                <HeartIcon className="text-lg" />
+                <ChicHeartIcon className="text-lg" />
               </Button>
             </div>
           </div>
